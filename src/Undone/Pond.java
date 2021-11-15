@@ -20,17 +20,19 @@ public class Pond {
 //	public static int checkDepth() {
 //		
 //	}
-	// 5��
+	// 5¹ø
 	public static int pond(int[][] arr) {
 		
 		int size = pondShape.length;	
 		visited = new boolean[size][size];
 		
+		// 연못 깊이를 지속적으로 검사하는 순환문과 순환문을 종료하는 코드 
 		boolean[][] visited = new boolean[size][size];
 		for(int i = 0 ; i < size; i++) {
 			for(int j = 0; j < size; j++)
+				// 상하좌우를 검사하는 코드가 필요
 				if(pondShape[i][j] == 1) {
-					// �����¿� depth Ȯ��
+					// »óÇÏÁÂ¿ì depth È®ÀÎ
 					
 					
 				}
