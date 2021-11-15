@@ -1,8 +1,8 @@
 package Done;
 
 
+// 2¹ø
 public class Calculator {
-	// 2¹ø
 	int num;
 	
 	public Calculator add(int a) {

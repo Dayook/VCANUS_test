@@ -24,6 +24,6 @@ public class Factorial {
 		System.out.println(factorial(4));
 				
 		// 4¹ø
-		System.out.println(factorial2(9));
+		System.out.println(factorial2(10));
 	}
 }
