@@ -17,7 +17,7 @@ public class Pond {
 	}
 
 	private boolean allMeasured() {
-		// √¯¡§µ«¡ˆ æ ¿∫ ºø¿Ã ¿÷¥Ÿ∏È false π›»Ø
+		// Ï∏°Ï†ïÎêòÏßÄ ÏïäÏùÄ ÏÖÄÏù¥ ÏûàÎã§Î©¥ false Î∞òÌôò
 		for (boolean[] bool : measured) {
 			for (boolean b : bool) {
 				if (!b)
@@ -31,26 +31,21 @@ public class Pond {
 
 		if (pond[i][j] == 0) {
 			measured[i][j] = true;
-		}
-		// π∞¿Ã∞Ì, π∞ ∞°¿Â¿⁄∏Æ∞° æ∆¥‘
-		if (pond[i][j] >= 1 && pond[i + 1][j] != 0 && pond[i][j + 1] != 0 && pond[i - 1][j] != 0
-				&& pond[i][j - 1] != 0) {
-			// ¡∂∞«∏∏¡∑ Ω√ ±Ì¿Ã ++
+		} else if (!measured[i][j]) {
+			// Ï°∞Í±¥ÎßåÏ°± Ïãú ÍπäÏù¥ ++
 			if (pond[i][j] <= pond[i + 1][j] && pond[i][j] <= pond[i][j + 1] && pond[i][j] <= pond[i - 1][j]
 					&& pond[i][j] <= pond[i][j - 1]) {
 				pond[i][j]++;
 			} else {
-				// ¡∂∞« ∏∏¡∑«œ¡ˆ æ ¥¬ ∞ÊøÏ - √¯¡§ øœ∑·
+				// Ï°∞Í±¥ ÎßåÏ°±ÌïòÏßÄ ÏïäÎäî Í≤ΩÏö∞ - Ï∏°Ï†ï ÏôÑÎ£å
 				measured[i][j] = true;
 			}
-		} else {
-			measured[i][j] = true;
 		}
 	}
 
 	public void checkDepth(int[][] arr) {
 
-		// ∏µÁ ºø √¯¡§øœ∑·«“ ∂ß±Ó¡ˆ π›∫π
+		// Î™®Îì† ÏÖÄ Ï∏°Ï†ïÏôÑÎ£åÌï† ÎïåÍπåÏßÄ Î∞òÎ≥µ
 		while (!allMeasured()) {
 			for (int i = 0; i < size; i++) {
 				for (int j = 0; j < size; j++) {
@@ -69,7 +64,7 @@ public class Pond {
 		newPond.checkDepth(newPond.pond);
 
 		int sum = 0;
-		// √‚∑¬
+		// Ï∂úÎ†•
 		for (int[] depth : newPond.pond) {
 			for (int d : depth) {
 				System.out.print(d + " ");
@@ -78,7 +73,7 @@ public class Pond {
 			System.out.println();
 		}
 		System.out.println("-----------------------");
-		System.out.println("ø¨∏¯ π∞ ±Ì¿Ã¿« √— «’: " + sum);
+		System.out.println("Ïó∞Î™ª Î¨º ÍπäÏù¥Ïùò Ï¥ù Ìï©: " + sum);
 
 	}
 

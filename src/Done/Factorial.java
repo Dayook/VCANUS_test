@@ -1,7 +1,7 @@
 package Done;
 
 public class Factorial {
-		// 3¹ø
+		// 3ë²ˆ
 		public static int factorial(int num) {
 			if(num == 1) {
 				return 1;
@@ -9,7 +9,7 @@ public class Factorial {
 			return num * factorial(num - 1);
 		}
 		
-		// 4¹ø 
+		// 4ë²ˆ 
 		public static int factorial2(int num) {
 			int[] factorialArr = new int[num + 1];
 			factorialArr[1] = 1; 
@@ -20,10 +20,10 @@ public class Factorial {
 		}
 		
 	public static void main(String[] args) {
-		// 3¹ø
+		// 3ë²ˆ
 		System.out.println(factorial(4));
 				
-		// 4¹ø
+		// 4ë²ˆ
 		System.out.println(factorial2(10));
 	}
 }

@@ -1,7 +1,7 @@
 package Done;
 
 
-// 2¹ø
+// 2ë²ˆ
 public class Calculator {
 	int num;
 	
