@@ -6,14 +6,10 @@ public class Pond {
 	int size;
 	boolean[][] measured;
 
-	public Pond() {
-		this.pond = new int[][] { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
-				{ 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 }, { 0, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, { 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
-				{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, { 0, 0, 1, 1, 1, 1, 1, 1, 0, 0 }, { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0 },
-				{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+	public Pond(int[][] pondShape) {
+		this.pond = pondShape ;
 		this.size = pond.length;
 		this.measured = new boolean[size][size];
-
 	}
 
 	private boolean allMeasured() {
@@ -43,7 +39,7 @@ public class Pond {
 		}
 	}
 
-	public void checkDepth(int[][] arr) {
+	public void checkDepth() {
 
 		// 모든 셀 측정완료할 때까지 반복
 		while (!allMeasured()) {
@@ -60,8 +56,11 @@ public class Pond {
 
 	public static void main(String[] args) {
 
-		Pond newPond = new Pond();
-		newPond.checkDepth(newPond.pond);
+		Pond newPond = new Pond(new int[][] { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+			{ 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 }, { 0, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, { 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
+			{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, { 0, 0, 1, 1, 1, 1, 1, 1, 0, 0 }, { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0 },
+			{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } });
+		newPond.checkDepth();
 
 		int sum = 0;
 		// 출력
